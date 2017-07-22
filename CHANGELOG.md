@@ -2,6 +2,10 @@
 
 ## 0.1
 
+### 0.1.20 (July 23, 2017)
+* Fix location of Rails generators to work with plugins
+  ([#56](https://github.com/shioyama/mobility/pull/56))
+
 ### 0.1.19 (July 16, 2017)
 * Partial support for AR 4.2 ([#46](https://github.com/shioyama/mobility/pull/46))
 * Fix issues with Sequel >= 4.46.0 ([#47](https://github.com/shioyama/mobility/pull/47))
