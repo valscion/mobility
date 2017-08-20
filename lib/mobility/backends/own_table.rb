@@ -18,6 +18,7 @@ module Mobility
 
       # @!macro backend_iterator
       def each_locale
+        yield model.locale.to_sym unless model.locale.nil?
         translations.each { |t| yield t.locale.to_sym }
       end
 

@@ -26,10 +26,7 @@ module Mobility
         foreign_key      = options[:foreign_key]
 
         after_initialize do
-          if locale.nil?
-            self.locale = Mobility.locale.to_s
-            translations = [self]
-          end
+          self.locale = Mobility.locale.to_s if locale.nil?
         end
 
         has_many association_name, class_name: name, foreign_key: foreign_key
@@ -38,6 +35,7 @@ module Mobility
       private
 
       def translation_for(locale, _)
+        return model if (model.locale.nil? || model.locale == locale.to_s)
         translation = translations.find { |t| t.locale == locale.to_s }
         translation ||= translations.build(locale: locale)
         translation
