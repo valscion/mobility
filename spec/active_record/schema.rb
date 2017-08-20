@@ -83,6 +83,15 @@ module Mobility
             t.boolean :published
           end
 
+          create_table "products" do |t|
+            t.string :slug
+            t.boolean :published
+            t.string :locale
+            t.string :name
+            t.integer :source_product_id
+            t.text :description
+          end
+
           create_table "serialized_posts" do |t|
             t.text :title
             t.text :content
